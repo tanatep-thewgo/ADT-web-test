@@ -1,0 +1,248 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* โลโก้ ADT ขวาบน */
+.logo-container {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+.logo {
+    width: 172px;
+    height: 95px;
+}
+
+/* ปุ่มย้อนกลับซ้ายบน */
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* พื้นที่ครอบสไลด์และลูกศร */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* คอนเทนเนอร์เก็บบรรดาสไลด์ */
+.slider-container {
+    position: relative;
+    width: 90%;
+    height: 450px;
+    margin: 0 auto;
+}
+
+/* จัดเลย์เอาต์หน้าสไลด์แต่ละหน้าแบบ Flex ซ้าย-ขวา */
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* แอนิเมชันตอนเลื่อนสไลด์ (Slide Animation) */
+.slide-item.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0) scale(1);
+}
+.slide-item.slide-left {
+    transform: translateX(-100px) scale(0.9);
+}
+.slide-item.slide-right {
+    transform: translateX(100px) scale(0.9);
+}
+
+/* ฝั่งซ้าย: กล่องข้อความอธิบาย */
+.content-left {
+    width: 50%;
+    left: 40px;
+    padding-right: 10px;
+}
+.content-left h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 40px;
+}
+.content-left p {
+    font-size: 32px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* ฝั่งขวา: การ์ดสินค้า */
+.content-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ปุ่มลูกศรซ้าย-ขวา */
+.nav-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+.nav-arrow:hover {
+    transform: scale(1.2);
+}
+
+/* =======================================================
+   CSS ของคุณที่ให้มา (ปรับปรุง Layout ของ Card เล็กน้อยเพื่อให้สมบูรณ์)
+   ======================================================= */
+
+.product-card-cell {
+    display: block; /* เปลี่ยนจาก table-cell เพื่อการจัดวางที่เสถียรบน flexbox */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid #f0f0f0;
+    padding: 24px;
+    width: 500px; /* กำหนดความกว้างการ์ดให้พอดีสวยงาม */
+    height: 663.87px;
+}
+
+/* สถานะ Available สีเขียวด้านบน */
+.status-badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.status-badge span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00c853;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* ส่วนแสดงรูปสินค้า */
+.product-img-box {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    border-bottom: 1px solid #6A6A6A; 
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ขนาดเฉพาะของแต่ละรูปสินค้าของคุณ */
+.product-img-box img[src="img/s9dibz-removebg-preview 2.svg"] {
+    max-width: 360px;
+    max-height: 360px;
+}
+.product-img-box img[src="img/zd-removebg-preview 1.svg"] {
+    max-width: 260px;
+    max-height: 260px;
+}
+.product-img-box img[src="img/image 3 (1).svg"] {
+    max-width: 300px;
+    max-height: 300px;
+}   
+
+.product-card-cell .product-img-box img[src="img/image 3 (2).svg"] {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+
+.product-info {
+    padding-top: 5px;
+}
+.product-info h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 6px;
+}
+.product-info .remaining {
+    font-size: 24px;
+    color: #777777;
+    margin-bottom: 18px;
+}
+
+/* ปุ่ม Get Now ใต้กล่องสินค้า */
+.btn-get-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 218.49px;
+    height: 71.43px;
+    background: linear-gradient(135deg, #0b2bb5 0%, #081b7a 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 32px;
+    letter-spacing: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(6, 28, 144, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-get-now:hover {
+    background: linear-gradient(135deg, #3043ae 0%, #08155d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(6, 28, 144, 0.32);
+}
+.btn-get-now:active {
+    transform: translateY(0);
+    box-shadow: 0 10px 18px rgba(6, 28, 144, 0.22);
+}

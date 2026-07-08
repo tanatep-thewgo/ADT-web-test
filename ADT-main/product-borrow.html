@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="logo-container">
+            <img src="img/ADT.svg" alt="ADT Logo" class="logo">
+        </div>
+
+        <a href="home.html" class="back-button">
+            <img src="img/Go Back.svg" alt="Go Back">
+        </a>
+
+        <div class="slider-wrapper">
+            
+            <button class="nav-arrow prev-btn" id="prevBtn">
+                <img src="img/arrow-right.svg" alt="Previous">
+            </button>
+
+            <div class="slider-container" id="sliderContainer">
+
+                <div class="slide-item active" data-slide="mikrotik">
+                    <div class="content-left">
+                        <h2>Mikrotik</h2>
+                        <p><strong>Mikrotik</strong> or <strong>Router Board</strong> is an intelligent device that has the ability to be used in a variety of ways and can also be adjusted or modified in various settings quite independently. Therefore, it is currently widely popular for use in network systems at both the personal and organizational levels, such as universities, companies, etc.</p>
+                    </div>
+                    <div class="content-right">
+                        <div class="product-card-cell">
+                            <div class="status-badge">
+                                <span></span>Available
+                            </div>
+                            <div class="product-img-box">
+                                <img src="img/s9dibz-removebg-preview 2.svg" alt="Mikrotik">
+                            </div>
+                            <div class="product-info">
+                                <h3>Mikrotik</h3>
+                                <div class="remaining">Remaining : 30</div>
+                                <a href="bowrrow1.html" class="btn-get-now">Get Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-item" data-slide="jumper-wire">
+                    <div class="content-left">
+                        <h2>Jumper wire</h2>
+                        <p><strong>Jumper wires</strong> (also called jumper cables, jumper wires, Dupont wires) are electrical wires or groups of wires in a cable that have connectors or pins on each end (or sometimes no connectors - just "tin-plated"), typically used to connect components of a test or prototyping board or other internal test circuit, or to other devices or components, without soldering.</p>
+                    </div>
+                    <div class="content-right">
+                        <div class="product-card-cell">
+                            <div class="status-badge">
+                                <span></span>Available
+                            </div>
+                            <div class="product-img-box">
+                                <img src="img/zd-removebg-preview 1.svg" alt="Jumper wire">
+                            </div>
+                            <div class="product-info">
+                                <h3>Jumper wire</h3>
+                                <div class="remaining">Remaining : 999</div>
+                                <a href="bowrrow2.html" class="btn-get-now">Get Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-item" data-slide="arduino-uno">
+                    <div class="content-left">
+                        <h2>Arduino Uno board</h2>
+                        <p><strong>Arduino </strong> is an open-source electronics platform that uses easy-to-use hardware and software. Arduino boards can read inputs, such as light on a sensor, a finger on a button, or a Twitter message, and convert them into outputs, such as activating a motor, turning on an LED, or publishing information online.</p>
+                    </div>
+                    <div class="content-right">
+                        <div class="product-card-cell">
+                            <div class="status-badge">
+                                <span></span>Available
+                            </div>
+                            <div class="product-img-box">
+                                <img src="img/zd-removebg-preview 1 (1).svg" alt="Jumper wire">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Uno board</h3>
+                                <div class="remaining">Remaining : 159</div>
+                                <a href="bowrrow3.html" class="btn-get-now">Get Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-item" data-slide="oculus-quest-2">
+                    <div class="content-left">
+                        <h2>Oculus Quest 2</h2>
+                        <p><strong>Oculus Quest 2</strong> is a VR (Virtual Reality) device designed to allow users to fully enjoy games and communication in the virtual world. The device comes with improved features and higher performance than the previous model, with a higher resolution display, allowing users to enjoy VR games with fun.</p>
+                    </div>
+                    <div class="content-right">
+                        <div class="product-card-cell">
+                            <div class="status-badge">
+                                <span></span>Available
+                            </div>
+                            <div class="product-img-box">
+                                <img src="img/image 3 (1).svg" alt="Oculus Quest 2">
+                            </div>
+                            <div class="product-info">
+                                <h3>Oculus Quest 2</h3>
+                                <div class="remaining">Remaining : 40</div>
+                                <a href="bowrrow4.html" class="btn-get-now">Get Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="nav-arrow next-btn" id="nextBtn">
+                <img src="img/arrow-left.svg" alt="Next">
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+
+        function updateSlider(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'slide-left', 'slide-right');
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i < index) {
+                    slide.classList.add('slide-left');
+                } else {
+                    slide.classList.add('slide-right');
+                }
+            });
+        }
+
+        function getIndexFromHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (!hash) return 0;
+            const slide = Array.from(slides).find(slideItem => slideItem.dataset.slide === hash);
+            return slide ? Array.from(slides).indexOf(slide) : 0;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider(currentIndex);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateSlider(currentIndex);
+            }
+        });
+
+        currentIndex = getIndexFromHash();
+        updateSlider(currentIndex);
+    </script>
+</body>
+</html>

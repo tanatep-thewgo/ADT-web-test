@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="hero-banner">
+        
+        <div class="header-nav">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="img/ADT.svg" alt="ADT Logo" width="172" height="95">
+                </a>
+                <div class="logo-text">School of applied digital technology</div>
+            </div>
+            <div class="menu-area">
+                <a href="#" class="active">Home</a>
+                <a href="product-reserve.html">Reserve</a>
+                <a href="product-borrow.html">Borrow</a>
+                <a href="rte.html">Return the equipment</a>
+                <a href="history.html">History</a>
+                <a href="aboutus.html">About us</a>
+            </div>
+            <div class="search-right-area">
+                <div class="top-search-bar">
+                    <img src="img/Search.svg" alt="Search Icon" class="search-icon">
+                    <input type="text" placeholder="Find equipment">
+                </div>
+                <div class="notification-icon">
+                    <img src="img/Doorbell.svg" alt="Notification Icon" class="doorbell-icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="notification-panel" id="notificationPanel">
+            <div class="notification-header">
+                <div class="notification-title">Notification</div>
+                <a href="#" class="mark-read">Mark all as read</a>
+            </div>
+            <div class="notification-tabs">
+                <button class="notification-tab active" data-tab="inbox">Inbox <span>1</span></button>
+                <button class="notification-tab" data-tab="general">General</button>
+                <button class="notification-tab" data-tab="archived">Archived</button>
+            </div>
+            <div class="notification-contents">
+                <div class="notification-list active" data-content="inbox">
+                    <div class="notification-item">
+                        <div class="notification-item-icon">
+                            <img src="img/ADT.svg" alt="ADT Logo">
+                        </div>
+                        <div class="notification-item-content">
+                            <div class="notification-item-title">Welcome! to the Equipment Lending System</div>
+                            <div class="notification-item-meta">36 mins ago</div>
+                        </div>
+                        <div class="notification-item-status"></div>
+                    </div>
+                </div>
+                <div class="notification-list" data-content="general">
+                    <div class="notification-empty"></div>
+                </div>
+                <div class="notification-list" data-content="archived">
+                    <div class="notification-empty"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-text-block">
+            <h1>Welcome !</h1>
+            <div class="sub-1">to the Equipment Lending System</div>
+            <div class="sub-2">Want to borrow equipment? We are ready to help you.</div>
+        </div>
+
+        <div class="vr-image-overlay">
+            <img src="img/oculus.svg" alt="VR Glasses Background">
+        </div>
+
+        <div class="search-filter-container">
+            <div class="filter-cell">
+                <select class="filter-select">
+                    <option>Type of equipment</option>
+                </select>
+            </div>
+            <div class="filter-cell">
+                <select class="filter-select">
+                    <option>Date</option>
+                </select>
+            </div>
+            <div class="search-btn-cell">
+                <a href="toe.html" class="btn-main-search">Search</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content-section">
+        
+        <div class="section-header">
+            <div class="section-title">Recommended</div>
+            <a href="#" class="view-all-link">View all &rarr;</a>
+        </div>
+
+        <div class="products-grid">
+            
+            <div class="product-card-cell">
+                <div class="status-badge"><span></span>Available</div>
+                <div class="product-img-box">
+                    <img src="img/s9dibz-removebg-preview 2.svg" alt="Mikrotik">
+                </div>
+                <div class="product-info">
+                    <h3>Mikrotik</h3>
+                    <div class="remaining">Remaining : 30</div>
+                    <a href="product-borrow.html" class="btn-get-now">Get now</a>
+                </div>
+            </div>
+
+            <div class="product-card-cell">
+                <div class="status-badge"><span></span>Available</div>
+                <div class="product-img-box">
+                    <img src="img/zd-removebg-preview 1.svg" alt="Jumper wire">
+                </div>
+                <div class="product-info">
+                    <h3>Jumper wire</h3>
+                    <div class="remaining">Remaining : 999</div>
+                    <a href="product-borrow.html#jumper-wire" class="btn-get-now">Get now</a>
+                </div>
+            </div>
+
+            <div class="product-card-cell">
+                <div class="status-badge"><span></span>Available</div>
+                <div class="product-img-box">
+                    <img src="img/zd-removebg-preview 1 (1).svg" alt="Arduino Uno board">
+                </div>
+                <div class="product-info">
+                    <h3>Arduino Uno board</h3>
+                    <div class="remaining">Remaining : 159</div>
+                    <a href="product-borrow.html#arduino-uno" class="btn-get-now">Get now</a>
+                </div>
+            </div>
+
+            <div class="product-card-cell">
+                <div class="status-badge"><span></span>Available</div>
+                <div class="product-img-box">
+                    <img src="img/image 3 (1).svg" alt="Oculus Quest 2">
+                </div>
+                <div class="product-info">
+                    <h3>Oculus Quest 2</h3>
+                    <div class="remaining">Remaining : 40</div>
+                    <a href="product-borrow.html#oculus-quest-2" class="btn-get-now">Get now</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        const bellIcon = document.querySelector('.notification-icon');
+        const notificationPanel = document.getElementById('notificationPanel');
+        const tabButtons = document.querySelectorAll('.notification-tab');
+        const tabContents = document.querySelectorAll('.notification-list[data-content]');
+
+        bellIcon.addEventListener('click', function(event) {
+            event.stopPropagation();
+            notificationPanel.classList.toggle('active');
+        });
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const targetTab = button.dataset.tab;
+
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                tabContents.forEach(content => {
+                    content.classList.toggle('active', content.dataset.content === targetTab);
+                });
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
+                notificationPanel.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

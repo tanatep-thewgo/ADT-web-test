@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADT Reserve System</title>
+    <link rel="stylesheet" href="2style.css">
+</head>
+<body>
+
+    <a href="bowrrow4.html" class="back-button">
+        <img src="img/Go Back.svg" alt="Go Back">
+    </a>
+
+    <div class="adt-logo">
+        <img src="img/ADT.svg" alt="ADT Logo">
+    </div>
+
+    <div class="borrow-card">
+        
+        <div class="product-image-container">
+            <img src="img/image 3 (2).svg" alt="Oculus Quest 2" class="product-image">
+        </div>
+
+        <div class="details-container">
+            <div class="info-section">
+                <h2>Oculus Quest 2</h2>
+                <p class="quantity"><strong>Quantity :</strong> 1 piece</p>
+                
+                <div class="borrower-info">
+                    <p><strong>Borrow by</strong></p>
+                    <p>Mr.Dorson Mark</p>
+                    <p>Student ID : 6631502XXX</p>
+                    <p>School of : Applied Digital Technology</p>
+                </div>
+                
+                <p class="note"><strong>Note :</strong> -</p>
+            </div>
+
+            <div class="form-section">
+                <div class="dropdown-group">
+                    <label for="date">Date :</label>
+                    <select id="date">
+                        <option>30.04.24</option>
+                    </select>
+                </div>
+
+                <div class="dropdown-group">
+                    <label for="due">Due :</label>
+                    <select id="due">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="dropdown-group">
+                    <label for="time">Time :</label>
+                    <select id="time">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="dropdown-group">
+                    <label for="location">Location :</label>
+                    <select id="location">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-continue">Continue</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-card">
+            <p class="popup-title">Reserve success !!</p>
+            <img src="img/Check Mark.svg" alt="Success" class="popup-icon">
+            <a href="home.html" class="popup-button">Back to home page</a>
+        </div>
+    </div>
+
+    <script>
+        const continueButton = document.querySelector('.btn-continue');
+        const popupOverlay = document.getElementById('successPopup');
+
+        continueButton.addEventListener('click', () => {
+            popupOverlay.style.display = 'flex';
+        });
+    </script>
+
+</body>
+</html>

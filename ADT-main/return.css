@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* โลโก้ ADT ขวาบน */
+.logo-container {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+.logo {
+    width: 172px;
+    height: 95px;
+    object-fit: contain;
+}
+
+/* ปุ่มย้อนกลับซ้ายบน */
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* --- ส่วนที่เพิ่มเติมเพื่อให้เหมือนรูปภาพ --- */
+
+/* ตัวคลุมเนื้อหาทั้งหมดเพื่อจัดวางแบบแนวตั้ง */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 150px;
+    padding: 30px 20px;
+}
+
+/* หัวข้อใหญ่ตรงกลาง */
+.title {
+    top: 100px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #4A5568; /* สีเทาเข้มแบบนุ่มนวล */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* การจัดวางกลุ่มของการ์ดทั้ง 4 ใบ */
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* ระยะห่างระหว่างการ์ดแต่ละใบ */
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* สไตล์ของการ์ดแต่ละใบ */
+.card {
+    background-color: #62727D; /* สีเทาเข้มอมฟ้าตามต้นฉบับ */
+    border-radius: 28px; /* ความโค้งมนของขอบการ์ด */
+    width: 380px;
+    min-height: 671px;
+    padding: 26px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ที่การ์ด */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+/* พื้นที่แสดงรูปภาพในตัวการ์ด */
+.card-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 240px;
+    object-fit: contain; /* ป้องกันไม่ให้รูปภาพบิดเบี้ยว */
+}
+
+/* ข้อความชื่ออุปกรณ์ใต้การ์ด */
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 400; /* Bebas Neue ใช้น้ำหนักปกติ */
+    color: #ffffff;   /* ตัวอักษรสีขาว */
+    text-align: center;
+    text-transform: uppercase; /* บังคับให้เป็นตัวพิมพ์ใหญ่ทั้งหมด */
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,221 @@
+/* ล้างค่าเริ่มต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* ปรับเป็น column เพื่อรองรับของที่อยู่ใต้การ์ด */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-banner {
+    position: relative;
+    margin: -150px auto 0 auto; /* เว้นล่างไว้ให้ปุ่มด้านล่างดันขึ้นมา */
+    width: 96%;
+    max-width: 1750px;
+    height: 450px;
+    /* ไล่เฉดสีตามรูป */
+    border-radius: 40px;
+    padding: 30px 50px;
+    overflow: visible; /* สำคัญ: เพื่อให้การ์ดยื่นทะลุขอบล่างออกมาได้ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ปุ่มย้อนกลับบนซ้าย */
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* ปุ่มไปข้างหน้าบนขวา (Flip จากปุ่มซ้าย) */
+.next-button {
+    left: auto;
+    right: 40px;
+    transform: scaleX(-1); /* กลับด้านในแนวนอน */
+}
+
+.next-button:hover {
+    transform: scaleX(-1) scale(1.1); /* ลิงก์เอฟเฟกต์ขยายตอน hover */
+}
+
+/* เมนูนำทางด้านบน */
+.navbar {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    z-index: 5;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #4A5568;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* การ์ด Mikrotik ตรงกลาง */
+.item-card {
+    position: absolute;
+    bottom: -150px; /* ดันการ์ดให้เลยขอบล่างของ Banner ออกมา */
+    background-color: #627284;
+    width: 320px;
+    height: 430px;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.item-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ส่วนตัวเลือกจำนวน */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 5px;
+}
+
+.qty-btn {
+    background: none;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: #ffffff;
+    color: #627284;
+}
+
+.qty-value {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.unit-text {
+    font-size: 14px;
+    color: #E2E8F0;
+    margin-bottom: 25px;
+}
+
+.due-date {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* พื้นที่จัดการด้านล่างการ์ด (Notes & Buttons) */
+.action-container {
+    margin-top: 180px; /* เว้นระยะจาก Banner เพื่อหลบแนวการ์ดที่ยื่นลงมา */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ช่องกรอก Notes */
+.notes-field {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.notes-field input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #7FA0C2;
+    padding: 8px 10px;
+    font-size: 18px;
+    color: #4A5568;
+    text-align: center;
+    outline: none;
+}
+
+.notes-field input::placeholder {
+    color: #7FA0C2;
+}
+
+/* ปุ่มด้านล่าง */
+.button-group {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 0;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.btn-borrow {
+    border: 2px solid #627284;
+    color: #334155;
+}
+
+.btn-borrow:hover {
+    background-color: #627284;
+    color: #ffffff;
+}
+
+.btn-cancel {
+    border: 2px solid #627284;
+    color: #334155;
+}
+
+.btn-cancel:hover {
+    background-color: #e53e3e;
+    border-color: #e53e3e;
+    color: #ffffff;
+}

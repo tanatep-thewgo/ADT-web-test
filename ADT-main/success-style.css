@@ -1,0 +1,115 @@
+/* ล้างค่าเริ่มต้น (อิงจาก style2.css เดิมของคุณ) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 40px; /* เว้นระยะห่างระหว่างการ์ดกับปุ่มด้านล่าง */
+}
+
+/* การ์ดล้อจากสไตล์เดิม แต่ปรับแก้ความสูงและเพิ่มความตื้นลึก */
+.item-card.success-card {
+    background-color: #627284;
+    width: 320px;
+    height: 450px;
+    border-radius: 30px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.item-image {
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.item-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.qty-value {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.unit-text {
+    font-size: 14px;
+    color: #E2E8F0;
+    margin-bottom: 20px;
+}
+
+/* วงกลมติ๊กถูกสีเขียวตามรูปภาพ */
+.success-icon {
+    background-color: #52E53E;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(82, 229, 62, 0.3);
+}
+
+/* ตัวเครื่องหมายติ๊กถูกภายในวงกลม */
+.success-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #627284;
+}
+
+.success-text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+/* คอนเทนเนอร์ปุ่มควบคุมด้านล่าง */
+.action-container {
+    width: 100%;
+    max-width: 320px; /* ให้ความกว้างเท่ากับการ์ดพอดิบพอดี */
+    display: flex;
+    justify-content: center;
+}
+
+/* ปุ่ม Back to homepage สีกรมท่าตามเรฟ */
+.btn-home {
+    width: 1392.73px;
+    height: 100.4px;
+    background-color: #001B94;
+    color: #ffffff;
+    border: none;
+    padding: 14px 0;
+    border-radius: 12px;
+    font-size: 36px;
+    font-weight: 50;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(0, 27, 148, 0.2);
+}
+
+.btn-home:hover {
+    background-color: #001470;
+}
+
+.btn-home:active {
+    transform: scale(0.98);
+}

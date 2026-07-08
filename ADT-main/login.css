@@ -1,0 +1,135 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #7DB8FF 0%, #98C1FF 17%, #B3CAFF 37%, #D4D5FF 58%, #F0DFFF 75%, #FFE3FF 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* การ์ดล็อกอินสีขาวตรงกลาง */
+        .login-container {
+            background-color: #ffffff;
+            width: 883px;
+            height: 547px;
+            padding: 40px 50px;
+            border-radius: 30px;
+            border-radius: 73px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* จัดระเบียบกล่อง Input */
+        .input-group {
+            width: 341px;
+            height: 45px;
+            position: relative;
+            margin: 0 auto 17px;
+        }
+
+        .input-group u,
+        .input-group p {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 32px 32px;
+            border-radius: 50%;
+        }
+
+        .input-group u {
+            background-image: url("img/User.svg");
+        }
+
+        .input-group p {
+            background-image: url("img/Secure.svg");
+            background-size: 40px 40px;
+            margin-top: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 20px 12px 55px;
+            border: none;
+            background-color: #D9D9D9;
+            border-radius: 25px;
+            font-size: 24px;
+            color: #333;
+            outline: none;
+            padding-left: 90px;
+        }
+
+        /* เปลี่ยนสี Placeholder (ตัวหนังสือลางๆ ด้านใน) */
+        .input-group input::placeholder {
+            padding-left: 14px;
+            color: #8c8c8c;
+        }
+
+        /* ลิงก์ลืมรหัสผ่าน */
+        .forgot-link {
+            display: block;
+            font-size: 15px;
+            color: #666666;
+            text-decoration: none;
+            margin-top: 32px;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ปุ่ม Login ไล่เฉดสี */
+        .btn-login {
+            width: 364px;
+            height: 70px;
+            padding: 12px;
+            border: none;
+            border-radius: 66px;
+            background: linear-gradient(to right, #57ABFF, #FFE4FF);
+            color: #333333;
+            font-size: 24px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: opacity 0.2s ease;
+            margin-top: 80px;
+            margin-bottom: 25px;
+        }
+
+        .btn-login:hover {
+            opacity: 0.9;
+        }
+
+        /* ลิงก์แถวล่างสุด */
+        .footer-links {
+            font-size: 13px;
+            color: #8c8c8c;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links a {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        .footer-links span {
+            margin: 0 10px;
+            color: #cccccc;
+        }

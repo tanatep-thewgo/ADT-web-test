@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF); /* พื้นหลังไล่เฉดสีฟ้า */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    text-align: center;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-button {
+    position: absolute;
+    top: -60px;
+    left: -150px;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1); /* ขยายขนาดเล็กน้อยเมื่อเอาเมาส์ไปชี้ */
+}
+
+.back-button img {
+    width: 90px;
+    height: 90px;
+}
+
+/* หัวข้อ */
+.title {
+    font-size: 60px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* การจัดวาง Grid สมาชิก 4 คอลัมน์ */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+
+/* การ์ดสมาชิกแต่ละคน */
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* กรอบรูปภาพทรงไข่แนวตั้ง (แคปซูล) สีน้ำเงิน */
+.avatar-wrapper {
+    width: 140px;
+    height: 190px;
+    background-color: #2172dd;
+    border-radius: 70px; /* ทำมุมโค้งเป็นรูปทรงไข่ */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* ให้รูปชิดขอบล่างเหมือนในภาพ */
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ข้อความชื่อและรหัสนักศึกษา */
+.name {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: light;
+    color: #333333;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+
+.student-id {
+    font-size: 18px;
+    color: #555555;
+}
+
+/* รองรับการแสดงผลบนหน้าจอแท็บเล็ตและมือถือ (Responsive) */
+@media (max-width: 992px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr); /* หน้าจอกลางๆ แสดงแถวละ 2 คน */
+    }
+}
+
+@media (max-width: 576px) {
+    .members-grid {
+        grid-template-columns: repeat(1, 1fr); /* หน้าจอมือถือ แสดงแถวละ 1 คน */
+    }
+    .back-button {
+        position: static;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+}

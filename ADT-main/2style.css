@@ -1,0 +1,259 @@
+/* ตั้งค่าเริ่มต้น ล้าง Margin/Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. พื้นหลังหลักตามที่คุณกำหนด */
+body {
+    background: linear-gradient(to bottom, #ffffff, #9ACDFF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* 2. ปุ่มกลับบนซ้ายตามที่คุณกำหนด */
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+.back-button:hover {
+    transform: scale(1.1);
+}
+.back-button img {
+    width: 110px; /* ปรับขนาดไอคอนตามต้องการ */
+    height: 110px;
+}
+
+/* โลโก้ ADT ขวาบน */
+.adt-logo {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+.adt-logo img {
+    width: 190px;
+    height: auto;
+}
+
+/* 3. การ์ดสีขาวตรงกลาง (ปรับสไตล์ให้คล้ายกล่องข้อความในรูป) */
+.borrow-card {
+    background-color: rgba(255, 255, 255, 0.85); /* ขาวอมโปร่งแสงเล็กน้อยให้เนียนกับพื้นหลัง */
+    backdrop-filter: blur(10px);
+    border-radius: 35px;
+    width: 100%;
+    max-width: 950px;
+    padding: 45px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    position: relative;
+}
+
+/* ฝั่งซ้าย: รูปภาพอุปกรณ์ */
+.product-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    /* เอฟเฟกต์เงาเบาๆ ให้ตัวอุปกรณ์ดูมีมิติ */
+    filter: drop-shadow(5px 10px 15px rgba(0,0,0,0.15)); 
+}
+
+/* ฝั่งขวา: คอนเทนเนอร์รวมเนื้อหาทั้งหมด */
+.details-container {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* ฝั่งข้อความรายละเอียด */
+.info-section {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #333;
+}
+.info-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.quantity, .note {
+    font-size: 0.95rem;
+}
+.quantity strong, .note strong {
+    color: #555;
+}
+.borrower-info {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+}
+.borrower-info p:first-child {
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* ฝั่งฟอร์มและ Dropdown */
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 240px;
+}
+
+.dropdown-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background-color: #fff;
+}
+.dropdown-group label {
+    font-size: 0.95rem;
+    color: #333;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+.dropdown-group select {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 5px;
+    /* เอาลูกศรเดิมออกเพื่อความคลีนแบบในรูป */
+    appearance: none; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 16px;
+}
+
+/* ปุ่ม Continue สีน้ำเงินเด่น */
+.btn-continue {
+    background-color: #001A9C;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: center;
+}
+.btn-continue:hover {
+    background-color: #001373;
+}
+.btn-continue:active {
+    transform: scale(0.98);
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 255, 55, 0.4);
+    backdrop-filter: blur(12px);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 40px 30px;
+    width: min(360px, 100%);
+    text-align: center;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+    backdrop-filter: none;
+    margin: 0 auto; /* center horizontally within the overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center card content horizontally */
+    justify-content: center; /* center card content vertically */
+}
+
+.popup-title {
+    font-size: 1.8rem;
+    color: #111;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.popup-icon {
+    width: 70px;
+    height: auto;
+    margin-bottom: 24px;
+    /* icon is centered by the card's alignment */
+}
+
+.popup-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0035b8;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.popup-button:hover {
+    background-color: #002a8f;
+    transform: translateY(-1px);
+}
+
+/* รองรับหน้าจอขนาดเล็ก (Responsive) */
+@media (max-width: 850px) {
+    body {
+        overflow: auto;
+    }
+    .borrow-card {
+        flex-direction: column;
+        padding: 30px;
+        margin-top: 80px;
+    }
+    .details-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .adt-logo {
+        top: 20px;
+        right: 20px;
+    }
+    .adt-logo img {
+        height: 45px;
+    }
+}
